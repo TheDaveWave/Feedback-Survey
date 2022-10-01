@@ -16,7 +16,7 @@ const feedbackInfo = {
 
 // reducer for feedback forms, default state is equal to the previously defined object.
 const feedbackReducer = (state = feedbackInfo, action) => {
-    // use a switch statement to detemine what to do with state and action per action.type
+    // use a switch statement to detemine what to do with state and action per action.type.
     switch (action.type) {
         case 'ADD_FEELING':
             // payload will be a number as a string value type.
