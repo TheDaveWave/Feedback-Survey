@@ -31,7 +31,8 @@ const feedbackReducer = (state = feedbackInfo, action) => {
                 supported: Number(action.payload)};
         case 'ADD_COMMENTS':
             // action.payload will be a string data type.
-            return {...state.comments = action.payload};
+            return {...state,
+                comments: action.payload};
         case 'CLEAR_FEEDBACK':
             // return feedback to its default state.
             return feedbackInfo;
