@@ -19,17 +19,15 @@ const feedbackReducer = (state = feedbackInfo, action) => {
     // use a switch statement to detemine what to do with state and action per action.type
     switch (action.type) {
         case 'ADD_FEELING':
-            
-            break;
+            // payload will be a number as a string value type.
+            return {...state.feeling = Number(state.feeling) + Number(action.payload)};
         case 'ADD_UNDERSTANDING':
-
-            break;
+            return {...state.understanding = Number(state.feeling) + Number(action.payload)};
         case 'ADD_SUPPORTED':
-
-            break;
+            return {...state.supported = Number(state.supported) + Number(action.payload)};
         case 'ADD_COMMENTS':
-
-            break;
+            // action.payload will be a string data type.
+            return {...state.comments = action.payload};
         default:
             return state;
     }
