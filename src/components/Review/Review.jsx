@@ -15,8 +15,8 @@ function Review() {
             support: feedback.supported,
             comments: feedback.comments
         })
-        .then(() => {
-            // do something?
+        .then((result) => {
+            // console.log(result.data);
         })
         .catch(err => {
             console.log('Error in axios /feedback', err);

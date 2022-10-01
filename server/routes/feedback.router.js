@@ -6,7 +6,7 @@ const pool = require('../modules/pool');
 // setup get request.
 router.get('/', (req, res) => {
     // set up the sql query text.
-    const queryText = 'SELECT * FROM "feedback" ORDER BY "date" DESC, "id";';
+    const queryText = 'SELECT * FROM "feedback" ORDER BY "date" DESC, "id" DESC;';
     pool.query(queryText)
     .then((response) => {
         res.send(response.rows);
@@ -23,12 +23,12 @@ router.post('/', (req, res) => {
     const par = req.body;
     // sanitzing the data in the query text.
     const queryText = `INSERT INTO "feedback" ("feeling", "understanding", "support", "comments")
-    VALUES ($1, $2, $3, $4);`;
+    VALUES ($1, $2, $3, $4) RETURNING *;`;
     // setting up the values to put into the query.
     const values = [par.feeling, par.understanding, par.support, par.comments];
     pool.query(queryText, values)
-    .then(() => {
-        res.sendStatus(201);
+    .then((response) => {
+        res.send(response.rows).status(201);
     })
     .catch(err => {
         console.log('Error in POST /feedback', err);
