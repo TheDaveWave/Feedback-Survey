@@ -7,7 +7,22 @@ function App() {
 
   return (
     <div className='App'>
-      
+      <Router>
+        <Switch>
+          <Route path='/understand'>
+
+          </Route>
+          <Route path='/support'>
+
+          </Route>
+          <Route path='/comment'>
+
+          </Route>
+          <Route path='/'>
+            
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
