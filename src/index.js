@@ -21,11 +21,14 @@ const feedbackReducer = (state = feedbackInfo, action) => {
         case 'ADD_FEELING':
             // payload will be a number as a string value type.
             // using the Number method to ensure values are stored as numbers.
-            return {...state.feeling = Number(state.feeling) + Number(action.payload)};
+            return {...state,
+                feeling: Number(action.payload)};
         case 'ADD_UNDERSTANDING':
-            return {...state.understanding = Number(state.feeling) + Number(action.payload)};
+            return {...state,
+                understanding: Number(action.payload)};
         case 'ADD_SUPPORTED':
-            return {...state.supported = Number(state.supported) + Number(action.payload)};
+            return {...state,
+                supported: Number(action.payload)};
         case 'ADD_COMMENTS':
             // action.payload will be a string data type.
             return {...state.comments = action.payload};
