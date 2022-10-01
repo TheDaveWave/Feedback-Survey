@@ -40,9 +40,9 @@ const feedbackReducer = (state = feedbackInfo, action) => {
 // create a store to access the reducers in other components.
 const storeInstance = createStore(
     // using combineReducers incase more reducers are added later.
-    combineReducers(
+    combineReducers({
         feedbackReducer
-    ),
+    }),
     // utilize logger for managing state.
     applyMiddleware(logger)
 );
