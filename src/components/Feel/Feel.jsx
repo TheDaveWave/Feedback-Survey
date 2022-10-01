@@ -1,6 +1,17 @@
+import { useHistory } from "react-router-dom";
+import { useDispatch } from 'react-redux';
 import Header from "../Header/Header";
 
 function Feel() {
+
+    // get the path history
+    const history = useHistory();
+    const dispatch = useDispatch();
+    // handle the on click event for the 'next' button.
+    const handleClick = () => {
+
+    }
+
     return (
         <section>
             <Header />
@@ -14,6 +25,7 @@ function Feel() {
                 <option value='4'>4</option>
                 <option value='5'>5</option>
             </select>
+            <button onClick={handleClick}>Next</button>
         </section>
     );
 }
