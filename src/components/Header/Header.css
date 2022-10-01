@@ -1,0 +1,15 @@
+.component-header {
+    background-color: #033076;
+    min-height: 70px;
+    padding: 20px;
+    color: white;
+    margin-bottom: 20px;
+}
+  
+.Header-title {
+    font-size: 2em;
+}
+
+h4 {
+    font-style: italic;
+}
