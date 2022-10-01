@@ -1,3 +1,5 @@
+import './Header.css';
+
 function Header() {
     return (
         <header className='component-header'>
@@ -6,3 +8,5 @@ function Header() {
         </header>
     );
 }
+
+export default Header;
