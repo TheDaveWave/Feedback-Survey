@@ -1,9 +1,16 @@
 import Header from "../Header/Header";
 import { useSelector } from 'react-redux';
+import { useHistory } from "react-router-dom";
 
 function Review() {
     // get the redux store reducer's state.
     const feedback = useSelector(store => store.feedbackReducer);
+    const history = useHistory();
+
+    const handleClick = () => {
+        // add a post route here.
+        history.push('/success');
+    }
 
     return (
         <section>
@@ -12,7 +19,7 @@ function Review() {
             <p>Understanding: {feedback.understanding}</p>
             <p>Support: {feedback.supported}</p>
             {feedback.comments && <p>Comments: {feedback.comments}</p>}
-            <button>Submit</button>
+            <button onClick={handleClick}>Submit</button>
         </section>
     );
 }
