@@ -8,7 +8,20 @@ function Review() {
     const history = useHistory();
 
     const handleClick = () => {
-        // add a post route here.
+        // post route to server.
+        axios.post('/feedback', {
+            feeling: feedback.feeling,
+            understanding: feedback.understanding,
+            support: feedback.supported,
+            comments: feedback.comments
+        })
+        .then(() => {
+            // do something?
+        })
+        .catch(err => {
+            console.log('Error in axios /feedback', err);
+        });
+        // push to next page.
         history.push('/success');
     }
 
