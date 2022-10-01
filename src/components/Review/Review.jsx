@@ -11,7 +11,7 @@ function Review() {
             <p>Feeling: {feedback.feeling}</p>
             <p>Understanding: {feedback.understanding}</p>
             <p>Support: {feedback.supported}</p>
-            <p>Comments: {feedback.comments}</p>
+            {feedback.comments && <p>Comments: {feedback.comments}</p>}
             <button>Submit</button>
         </section>
     );
