@@ -16,7 +16,8 @@ function Understand() {
             type: 'ADD_UNDERSTANDING',
             payload: understanding
         });
-
+        // push to the next page.
+        history.push('/support');
     }
 
     return (
