@@ -1,4 +1,4 @@
-import Header from "../Header/Header";
+import axios from 'axios';
 import { useSelector } from 'react-redux';
 import { useHistory } from "react-router-dom";
 
