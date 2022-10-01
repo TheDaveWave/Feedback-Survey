@@ -35,16 +35,19 @@ const feedbackReducer = (state = feedbackInfo, action) => {
     }
 }
 
+// create a store to access the reducers in other components.
 const storeInstance = createStore(
+    // using combineReducers incase more reducers are added later.
     combineReducers(
         feedbackReducer
     ),
+    // utilize logger for managing state.
     applyMiddleware(logger)
 );
 
 ReactDOM.render(
     //  set a store instance for accessing data.
-    <Provider>
+    <Provider store={storeInstance}>
         <App />
     </Provider>,
     document.getElementById('root')
