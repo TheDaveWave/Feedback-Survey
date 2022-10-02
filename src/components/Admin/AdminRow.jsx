@@ -13,7 +13,7 @@ function AdminRow({feedback, fetchFeedback}) {
             // changing the text on the confirm button.
             buttons: {
                 cancel: true,
-                confirm: 'Delete',
+                confirm: 'Delete'
             },
             dangerMode: true
         })
