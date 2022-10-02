@@ -10,7 +10,7 @@ import logger from 'redux-logger';
 const feedbackInfo = {
     feeling: 1,
     understanding: 1,
-    supported: 1,
+    support: 1,
     comments: '',
 }
 
@@ -28,7 +28,7 @@ const feedbackReducer = (state = feedbackInfo, action) => {
                 understanding: Number(action.payload)};
         case 'ADD_SUPPORTED':
             return {...state,
-                supported: Number(action.payload)};
+                support: Number(action.payload)};
         case 'ADD_COMMENTS':
             // action.payload will be a string data type.
             return {...state,

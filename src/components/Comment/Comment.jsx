@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import Header from "../Header/Header";
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 
 function Comment() {
+    // get the current value of support to the 'global state' of support.
+    const currentComments = useSelector(store => store.feedbackReducer.comments);
     // set a local use state.
-    const [comments, setComments] = useState('');
+    const [comments, setComments] = useState(currentComments);
     // get the path history.
     const history = useHistory();
     const dispatch = useDispatch();

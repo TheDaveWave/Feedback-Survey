@@ -12,7 +12,7 @@ function Review() {
         axios.post('/feedback', {
             feeling: feedback.feeling,
             understanding: feedback.understanding,
-            support: feedback.supported,
+            support: feedback.support,
             comments: feedback.comments
         })
         .then((result) => {
@@ -30,7 +30,7 @@ function Review() {
             <h1>Review Your Feedback</h1>
             <p>Feeling: {feedback.feeling}</p>
             <p>Understanding: {feedback.understanding}</p>
-            <p>Support: {feedback.supported}</p>
+            <p>Support: {feedback.support}</p>
             {feedback.comments && <p>Comments: {feedback.comments}</p>}
             <button onClick={handleClick}>Submit</button>
             <button onClick={() => history.push('/comment')}>Back</button>
