@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from "react-router-dom";
 import swal from 'sweetalert';
+import './Review.css';
 
 function Review() {
     // get the redux store reducer's state.
@@ -75,13 +76,21 @@ function Review() {
 
     return (
         <section>
-            <h1>Review Your Feedback</h1>
-            <p>Feeling: {feedback.feeling}</p>
-            <p>Understanding: {feedback.understanding}</p>
-            <p>Support: {feedback.support}</p>
-            {feedback.comments && <p>Comments: {feedback.comments}</p>}
-            <button onClick={handleClick}>Submit</button>
-            <button onClick={() => history.push('/comment')}>Back</button>
+            <div className='review-container'>
+                <div className='review-box'>
+                    <h1>Review Your Feedback</h1>
+                    <p>Feeling: {feedback.feeling}</p>
+                    <p>Understanding: {feedback.understanding}</p>
+                    <p>Support: {feedback.support}</p>
+                    <div>
+                        {feedback.comments && <p>Comments: {feedback.comments}</p>}
+                    </div>
+                    <div className='btn-container'>
+                        <button onClick={() => history.push('/comment')}>Back</button>
+                        <button onClick={handleClick}>Submit</button>
+                    </div>
+                </div>
+            </div>
         </section>
     );
 }

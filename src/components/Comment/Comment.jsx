@@ -33,8 +33,8 @@ function Comment() {
                         <label htmlFor='comment-input'>Comments</label>
                         <input value={comments} onChange={evt => setComments(evt.target.value)} id='comment-input' type='text' placeholder='Insert comment'/>
                         <div className='btn-container'>
-                            <button onClick={handleClick}>Next</button>
                             <button onClick={() => history.push('/support')}>Back</button>
+                            <button onClick={handleClick}>Next</button>
                         </div>
                     </div>
                 </div>

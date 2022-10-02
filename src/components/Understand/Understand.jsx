@@ -40,8 +40,8 @@ function Understand() {
                             <option value='5'>5</option>
                         </select>
                         <div className='btn-container'>
-                            <button onClick={handleClick}>Next</button>
                             <button onClick={() => history.push('/')}>Back</button>
+                            <button onClick={handleClick}>Next</button>
                         </div>
                     </div>
                 </div>

@@ -1,0 +1,42 @@
+.review-container {
+    position: fixed;
+    width: 80%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.review-box {
+    position: relative;
+    background-color: #eaf2e3;
+    border-radius: 10px;
+    width: fit-content;
+    padding: 5% 4%;
+    margin: 0 auto;
+}
+
+.review-box p {
+    font-size: 125%;
+}
+
+.review-box div p {
+    overflow-wrap: break-word;
+}
+
+.review-box button {
+    font-size: 125%;
+    cursor: pointer;
+
+    color: #fff;
+    background-color: #3DA5D9;
+    border-color: transparent;
+    border-radius: 10px;
+    padding: 2%;
+    transition: all 0.2s ease-in-out;
+}
+
+.review-box button:hover {
+    box-shadow: 1.5px 3px 2px 0px #2364AA;
+    transition: all 0.2s ease-in-out;
+    transform: scale(1.1);
+}
