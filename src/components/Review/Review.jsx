@@ -44,7 +44,7 @@ function Review() {
                                 value: null
                             },
                             newFeedback: {
-                                text: 'Leave New Feedback',
+                                text: 'New Feedback',
                                 value: 'restart'
                             }
                         }
