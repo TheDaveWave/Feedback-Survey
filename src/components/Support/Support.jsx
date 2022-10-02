@@ -26,18 +26,26 @@ function Support() {
     return (
         <section>
             <Header />
-            <h1>How well are you being supported?</h1>
-            <label htmlFor='support-select'>Support?</label>
-            {/* Creating a select element so there will always be a value and limited range */}
-            <select value={support} id='support-select' name='support' onChange={evt => setSupported(evt.target.value)}>
-                <option value='1'>1</option>
-                <option value='2'>2</option>
-                <option value='3'>3</option>
-                <option value='4'>4</option>
-                <option value='5'>5</option>
-            </select>
-            <button onClick={handleClick}>Next</button>
-            <button onClick={() => history.push('/understand')}>Back</button>
+            <div className='form-container'>
+                <div className='form'>
+                    <h1>How well are you being supported?</h1>
+                    <div className='flex-container'>
+                        <label htmlFor='support-select'>Support?</label>
+                        {/* Creating a select element so there will always be a value and limited range */}
+                        <select value={support} id='support-select' name='support' onChange={evt => setSupported(evt.target.value)}>
+                            <option value='1'>1</option>
+                            <option value='2'>2</option>
+                            <option value='3'>3</option>
+                            <option value='4'>4</option>
+                            <option value='5'>5</option>
+                        </select>
+                        <div className='btn-container'>
+                            <button onClick={handleClick}>Next</button>
+                            <button onClick={() => history.push('/understand')}>Back</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     );
 }
