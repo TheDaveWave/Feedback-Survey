@@ -10,6 +10,6 @@
     font-size: 2em;
 }
 
-h4 {
+.component-header h4 {
     font-style: italic;
 }
