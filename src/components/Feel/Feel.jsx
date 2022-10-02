@@ -1,11 +1,16 @@
 import { useHistory } from "react-router-dom";
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Header from "../Header/Header";
 import { useState } from "react";
 
 function Feel() {
-    // set a local use state.
-    const [feeling, setFeeling] = useState(1);
+    // get the current value of feeling so on load the value of inputs is set correctly.
+    // this will be used for when a user goes back in the form to update their submission.
+    const currentFeeling = useSelector(store => store.feedbackReducer.feeling);
+    // console.log(currentFeeling);
+    // set a local use state make default to the current corresponding reducer value. 
+    // use number method to ensure that it is a number.
+    const [feeling, setFeeling] = useState(Number(currentFeeling));
     // get the path history.
     const history = useHistory();
     const dispatch = useDispatch();

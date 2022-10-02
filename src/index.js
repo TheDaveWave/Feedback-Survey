@@ -8,9 +8,9 @@ import logger from 'redux-logger';
 
 // create a default object to store the information from the client feedback forms into redux.
 const feedbackInfo = {
-    feeling: 0,
-    understanding: 0,
-    supported: 0,
+    feeling: 1,
+    understanding: 1,
+    supported: 1,
     comments: '',
 }
 
