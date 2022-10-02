@@ -12,6 +12,10 @@ function Admin() {
                         <th>Delete</th>
                     </tr>
                 </thead>
+                <tbody>
+
+                </tbody>
+                <tfoot></tfoot>
             </table>
         </section>
     );
