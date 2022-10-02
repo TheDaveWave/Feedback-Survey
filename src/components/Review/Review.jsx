@@ -30,44 +30,44 @@ function Review() {
                 })
                 .then((result) => {
                     // console.log(result.data);
+                    // have a cool success pop up appear.
+                    swal({
+                        text: 'Feedback Submitted!',
+                        icon: 'success',
+                        buttons: {
+                            exit: {
+                                text: 'Exit',
+                                value: 'exit'
+                            },
+                            meme: {
+                                text: 'Meme',
+                                value: null
+                            },
+                            newFeedback: {
+                                text: 'Leave New Feedback',
+                                value: 'restart'
+                            }
+                        }
+                    })
+                    .then(value => {
+                        switch(value) {
+                            case 'restart':
+                                dispatch({
+                                    type: 'CLEAR_FEEDBACK'
+                                });
+                                history.replace('/');
+                                break;
+                            case 'exit':
+                                // send user to a new url outside of this app.
+                                window.location.replace('https://google.com');
+                                break;
+                            default: 
+                                history.push('/success');
+                        }
+                    });
                 })
                 .catch(err => {
                     console.log('Error in axios /feedback', err);
-                });
-                // have a cool success pop up appear.
-                swal({
-                    text: 'Feedback Submitted!',
-                    icon: 'success',
-                    buttons: {
-                        exit: {
-                            text: 'Exit',
-                            value: 'exit'
-                        },
-                        newFeedback: {
-                            text: 'Leave New Feedback',
-                            value: 'restart'
-                        },
-                        meme: {
-                            text: 'Meme',
-                            value: null
-                        }
-                    }
-                })
-                .then(value => {
-                    switch(value) {
-                        case 'restart':
-                            dispatch({
-                                type: 'CLEAR_FEEDBACK'
-                            });
-                            history.replace('/');
-                            break;
-                        case 'exit':
-                            // send user to a new url outside of this app.
-                            window.location.replace('https://google.com');
-                            break;
-                        default: 
-                            history.push('/success');
-                    }
                 });
             }
         });
