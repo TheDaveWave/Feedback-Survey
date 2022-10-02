@@ -31,9 +31,6 @@ function Admin() {
                 <div className='admin-box'>
                     <h1>Feedback Results!</h1>
                     <table>
-                        <thead>
-                            
-                        </thead>
                         <tbody>
                             {/* loop over feedbackData and display each feedback objects keys on the DOM */}
                             {feedbackData.map(feedback => (
