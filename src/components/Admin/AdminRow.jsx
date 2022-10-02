@@ -1,20 +1,35 @@
 import axios from "axios";
+import swal from "sweetalert";
 
 // creates each feedback object's table row for Admin.jsx.
 function AdminRow({feedback, fetchFeedback}) {
 
-
-    // need confirmation popup!!!!!
     // Delete route to /feedback/:feedbackId
     const deleteFeedback = () => {
-        // send delete request with id key to server.
-        axios.delete(`/feedback/${feedback.id}`)
-        .then(() => {
-            // refresh the table through a function passed in as a prop.
-            fetchFeedback();
+        // using sweet alert to confirm delete.
+        swal({
+            title: 'Delete entry?',
+            text: 'Once deleted, it will be gone forever.',
+            // changing the text on the confirm button.
+            buttons: {
+                cancel: true,
+                confirm: 'Delete',
+            },
+            dangerMode: true
         })
-        .catch(err => {
-            console.log(`Error in axios DELETE /feedback/${feedback.id}`, err);
+        .then(ok => {
+            // check if delete button on modal was select and if so delete row.
+            if(ok) {
+                 // send delete request with id key to server.
+                axios.delete(`/feedback/${feedback.id}`)
+                .then(() => {
+                    // refresh the table through a function passed in as a prop.
+                    fetchFeedback();
+                })
+                .catch(err => {
+                    console.log(`Error in axios DELETE /feedback/${feedback.id}`, err);
+                });
+            }
         });
     }
 
