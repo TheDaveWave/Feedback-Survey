@@ -1,11 +1,14 @@
 import { useHistory } from "react-router-dom";
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Header from "../Header/Header";
 import { useState } from "react";
 
 function Understand() {
-    // set a local use state.
-    const [understanding, setUnderstanding] = useState(1);
+    // get the updated value of understanding for when the user wants to change the option later.
+    const currentUnderstanding = useSelector(store => store.feedbackReducer.understanding);
+    // set a local use state. Putting currentUnderstanding in Number() so when you highlight
+    // understanding state variable it shows that it should be defined as a number data type.
+    const [understanding, setUnderstanding] = useState(Number(currentUnderstanding));
     // get the path history.
     const history = useHistory();
     const dispatch = useDispatch();
@@ -26,7 +29,7 @@ function Understand() {
             <h1>How well are you understanding the content?</h1>
             <label htmlFor='understand-select'>Understanding?</label>
             {/* Creating a select element so there will always be a value and limited range */}
-            <select id='understand-select' name='understand' onChange={evt => setUnderstanding(evt.target.value)}>
+            <select value={understanding} id='understand-select' name='understand' onChange={evt => setUnderstanding(evt.target.value)}>
                 <option value='1'>1</option>
                 <option value='2'>2</option>
                 <option value='3'>3</option>
