@@ -40,7 +40,7 @@ function Admin() {
                 <tbody>
                     {/* loop over feedbackData and display each feedback objects keys on the DOM */}
                     {feedbackData.map(feedback => (
-                        <AdminRow key={feedback.id} feedback={feedback}/>
+                        <AdminRow key={feedback.id} feedback={feedback} fetchFeedback={fetchFeedback}/>
                     ))}
                 </tbody>
                 <tfoot></tfoot>
