@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import AdminRow from "./AdminRow";
+import './Admin.css';
 
 function Admin() {
     // set a local state to store the data from the database.
@@ -26,25 +27,23 @@ function Admin() {
 
     return (
         <section>
-            <h1>Feedback Results!</h1>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Feeling</th>
-                        <th>Comprehension</th>
-                        <th>Support</th>
-                        <th>Comments</th>
-                        <th>Delete</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {/* loop over feedbackData and display each feedback objects keys on the DOM */}
-                    {feedbackData.map(feedback => (
-                        <AdminRow key={feedback.id} feedback={feedback} fetchFeedback={fetchFeedback}/>
-                    ))}
-                </tbody>
-                <tfoot></tfoot>
-            </table>
+            <div className='admin-container'>
+                <div className='admin-box'>
+                    <h1>Feedback Results!</h1>
+                    <table>
+                        <thead>
+                            
+                        </thead>
+                        <tbody>
+                            {/* loop over feedbackData and display each feedback objects keys on the DOM */}
+                            {feedbackData.map(feedback => (
+                                <AdminRow key={feedback.id} feedback={feedback} fetchFeedback={fetchFeedback}/>
+                            ))}
+                        </tbody>
+                        <tfoot></tfoot>
+                    </table>
+                </div>
+            </div>
         </section>
     );
 }

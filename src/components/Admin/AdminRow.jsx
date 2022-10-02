@@ -47,18 +47,34 @@ function AdminRow({feedback, fetchFeedback}) {
     }
 
     return (
-        <tr>
+        <>
+        <tr className={feedback.flagged ? 'flagged' : ''}>
+            <th>Feeling</th>
+            <th>Comprehension</th>
+            <th>Support</th>
+            {/* <th>Comments</th> */}
+            <th>Flag</th>
+            <th>Del</th>
+        </tr>
+        <tr className={feedback.flagged ? 'flagged' : ''}>
             <td>{feedback.feeling}</td>
             <td>{feedback.understanding}</td>
             <td>{feedback.support}</td>
-            <td>{feedback.comments}</td>
+            {/* <td>{feedback.comments}</td> */}
             <td>
-                <button onClick={() => deleteFeedback()}>Delete</button>
-                {' '}<button onClick={() => flagFeedback()}>Flag</button>
-                {/* temporary condition to check if row is flagged. */}
-                {feedback.flagged && <p>Flagged</p>}
+                <button onClick={() => flagFeedback()}>Flag</button>
+            </td>
+            <td>
+                <button onClick={() => deleteFeedback()}>X</button>
             </td>
         </tr>
+        <tr className={feedback.flagged ? 'flagged' : ''}>
+            <th colSpan={5}>Comments</th>
+        </tr>
+        <tr className={feedback.flagged ? 'flagged' : ''}>
+            <td colSpan={5}>{feedback.comments !== '' ? feedback.comments : 'None'}</td>
+        </tr>
+        </>
     );
 }
 

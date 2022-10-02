@@ -1,0 +1,33 @@
+.admin-container {
+    position: absolute;
+    width: 80%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.admin-box {
+    position: relative;
+    background-color: #eaf2e3;
+    border-radius: 10px;
+    width: fit-content;
+    padding: 5% 4%;
+    margin: 0 auto;
+}
+
+.admin-box table {
+    border-collapse: collapse;
+}
+
+.admin-box table, th, td {
+    border: 1px solid #000;
+}
+
+.admin-box th, .comment-row {
+    font-size: 90%;
+}
+
+.flagged {
+    text-emphasis: bold;
+    color: red;
+}
