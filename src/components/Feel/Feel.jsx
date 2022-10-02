@@ -31,7 +31,7 @@ function Feel() {
             <h1>How are you feeling today?</h1>
             <label htmlFor='feeling-select'>Feeling?</label>
             {/* Creating a select element so there will always be a value and limited range */}
-            <select id='feeling-select' name='feeling' onChange={evt => setFeeling(evt.target.value)}>
+            <select value={feeling} id='feeling-select' name='feeling' onChange={evt => setFeeling(evt.target.value)}>
                 <option value='1'>1</option>
                 <option value='2'>2</option>
                 <option value='3'>3</option>
