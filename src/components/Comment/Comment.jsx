@@ -26,11 +26,19 @@ function Comment() {
     return (
         <section>
             <Header />
-            <h1>Any comments you want to leave?</h1>
-            <label htmlFor='comment-input'>Comments</label>
-            <input value={comments} onChange={evt => setComments(evt.target.value)} id='comment-input' type='text' placeholder='Insert comment'/>
-            <button onClick={handleClick}>Next</button>
-            <button onClick={() => history.push('/support')}>Back</button>
+            <div className='form-container'>
+                <div className='form'>
+                    <h1>Any comments you want to leave?</h1>
+                    <div className='flex-container'>
+                        <label htmlFor='comment-input'>Comments</label>
+                        <input value={comments} onChange={evt => setComments(evt.target.value)} id='comment-input' type='text' placeholder='Insert comment'/>
+                        <div className='btn-container'>
+                            <button onClick={handleClick}>Next</button>
+                            <button onClick={() => history.push('/support')}>Back</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     );
 }

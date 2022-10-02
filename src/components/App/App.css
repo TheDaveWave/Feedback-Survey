@@ -58,6 +58,16 @@ section {
   border-bottom: 2px solid #000;
 }
 
+.flex-container input {
+  font-size: 125%;
+  margin: 3% 2%;
+  width: 90%;
+  cursor: text;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #000;
+}
+
 .flex-container button {
   font-size: 125%;
   cursor: pointer;
