@@ -36,7 +36,7 @@ router.post('/', (req, res) => {
     });
 });
 
-// DELETE request to /feedback.
+// DELETE request to /feedback/:feedbackId
 router.delete('/:feedbackId', (req, res) => {
     console.log('In DELETE /feedback', req.params.feedbackId);
     const feedbackId = req.params.feedbackId;
@@ -49,6 +49,23 @@ router.delete('/:feedbackId', (req, res) => {
     })
     .catch(err => {
         console.log(`Error in DELETE /feedback/${feedbackId}`, err);
+        res.sendStatus(500);
+    });
+});
+
+// PUT request to /feedback/:feedbackId
+router.put('/:feedbackId', (req,res) => {
+    const feedbackId = req.params.feedbackId;
+    console.log(`In PUT /feedback/${feedbackId}`);
+    // Update the flagged value to be the opposite of its current value.
+    const queryText = `UPDATE "feedback" SET "flagged" = NOT "flagged" WHERE "id" = $1;`;
+    pool.query(queryText, [feedbackId])
+    .then(() => {
+        console.log(`Successful PUT /feedback/${feedbackId}`);
+        res.sendStatus(201);
+    })
+    .catch(err => {
+        console.log(`Error in PUT /feedback/${feedbackId}`, err);
         res.sendStatus(500);
     });
 });
