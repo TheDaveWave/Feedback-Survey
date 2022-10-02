@@ -34,6 +34,7 @@ function Understand() {
                 <option value='5'>5</option>
             </select>
             <button onClick={handleClick}>Next</button>
+            <button onClick={() => history.push('/')}>Back</button>
         </section>
     );
 }

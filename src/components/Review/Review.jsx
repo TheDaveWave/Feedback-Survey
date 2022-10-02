@@ -33,6 +33,7 @@ function Review() {
             <p>Support: {feedback.supported}</p>
             {feedback.comments && <p>Comments: {feedback.comments}</p>}
             <button onClick={handleClick}>Submit</button>
+            <button onClick={() => history.push('/comment')}>Back</button>
         </section>
     );
 }

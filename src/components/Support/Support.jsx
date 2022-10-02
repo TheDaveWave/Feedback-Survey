@@ -35,6 +35,7 @@ function Support() {
                 <option value='5'>5</option>
             </select>
             <button onClick={handleClick}>Next</button>
+            <button onClick={() => history.push('/understand')}>Back</button>
         </section>
     );
 }

@@ -51,8 +51,8 @@ const storeInstance = createStore(
     applyMiddleware(logger)
 );
 
+//  set a store instance for accessing data.
 ReactDOM.render(
-    //  set a store instance for accessing data.
     <Provider store={storeInstance}>
         <App />
     </Provider>,
