@@ -28,17 +28,23 @@ function Feel() {
     return (
         <section>
             <Header />
-            <h1>How are you feeling today?</h1>
-            <label htmlFor='feeling-select'>Feeling?</label>
-            {/* Creating a select element so there will always be a value and limited range */}
-            <select value={feeling} id='feeling-select' name='feeling' onChange={evt => setFeeling(evt.target.value)}>
-                <option value='1'>1</option>
-                <option value='2'>2</option>
-                <option value='3'>3</option>
-                <option value='4'>4</option>
-                <option value='5'>5</option>
-            </select>
-            <button onClick={handleClick}>Next</button>
+            <div className='form-container'>
+                <div className='form'>
+                    <h1>How are you feeling today?</h1>
+                    <div className='flex-container'>
+                        <label htmlFor='feeling-select'>Feeling?</label>
+                        {/* Creating a select element so there will always be a value and limited range */}
+                        <select value={feeling} id='feeling-select' name='feeling' onChange={evt => setFeeling(evt.target.value)}>
+                            <option value='1'>1</option>
+                            <option value='2'>2</option>
+                            <option value='3'>3</option>
+                            <option value='4'>4</option>
+                            <option value='5'>5</option>
+                        </select>
+                        <button onClick={handleClick}>Next</button>
+                    </div>
+                </div>
+            </div>
         </section>
     );
 }
