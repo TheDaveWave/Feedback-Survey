@@ -28,10 +28,27 @@ router.post('/', (req, res) => {
     const values = [par.feeling, par.understanding, par.support, par.comments];
     pool.query(queryText, values)
     .then((response) => {
-        res.send(response.rows).status(201);
+        res.status(201).send(response.rows);
     })
     .catch(err => {
         console.log('Error in POST /feedback', err);
+        res.sendStatus(500);
+    });
+});
+
+// DELETE request to /feedback.
+router.delete('/:feedbackId', (req, res) => {
+    console.log('In DELETE /feedback', req.params.feedbackId);
+    const feedbackId = req.params.feedbackId;
+    // setup sql query text with data sanitization.
+    const queryText = `DELETE FROM "feedback" WHERE "id" = $1;`;
+    pool.query(queryText, [feedbackId])
+    .then(() => {
+        console.log(`Successful DELETE /feedback/${feedbackId}`);
+        res.sendStatus(200);
+    })
+    .catch(err => {
+        console.log(`Error in DELETE /feedback/${feedbackId}`, err);
         res.sendStatus(500);
     });
 });
