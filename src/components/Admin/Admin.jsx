@@ -1,7 +1,18 @@
 function Admin() {
     return (
         <section>
-            <h1>Admin section here homie</h1>
+            <h1>Feedback Results!</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Feeling</th>
+                        <th>Comprehension</th>
+                        <th>Support</th>
+                        <th>Comments</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+            </table>
         </section>
     );
 }
