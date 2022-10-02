@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from "react-router-dom";
 import swal from 'sweetalert';
 
@@ -7,6 +7,7 @@ function Review() {
     // get the redux store reducer's state.
     const feedback = useSelector(store => store.feedbackReducer);
     const history = useHistory();
+    const dispatch = useDispatch();
 
     const handleClick = () => {
         // use sweetalert to confirm submission.
@@ -35,12 +36,37 @@ function Review() {
                 });
                 // have a cool success pop up appear.
                 swal({
-                    icon: 'success'
+                    text: 'Feedback Submitted!',
+                    icon: 'success',
+                    buttons: {
+                        exit: {
+                            text: 'Exit',
+                            value: 'exit'
+                        },
+                        newFeedback: {
+                            text: 'Leave New Feedback',
+                            value: 'restart'
+                        },
+                        meme: {
+                            text: 'Meme',
+                            value: null
+                        }
+                    }
                 })
                 .then(value => {
-                    if(value) {
-                        // push to next page.
-                        history.push('/success');
+                    switch(value) {
+                        case 'restart':
+                            dispatch({
+                                type: 'CLEAR_FEEDBACK'
+                            });
+                            history.replace('/');
+                            break;
+                        case 'exit':
+                            // send user to a new url outside of this app.
+                            window.location.replace('https://google.com');
+                            break;
+                        default: 
+                            history.push('/success');
                     }
                 });
             }
