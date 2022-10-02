@@ -68,4 +68,23 @@ section {
   border-color: transparent;
   border-radius: 10px;
   padding: 2%;
+  transition: all 0.2s ease-in-out;
+}
+
+.flex-container button:hover {
+  box-shadow: 1.5px 3px 2px 0px #2364AA;
+  transition: all 0.2s ease-in-out;
+  transform: scale(1.1);
+}
+
+.btn-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 15%;
+}
+
+.btn-container button {
+  padding: 2%;
+  width: fit-content;
 }
