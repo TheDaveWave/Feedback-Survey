@@ -70,11 +70,11 @@ When the submit button is clicked, save the submission in the database. The user
 
 ### ADMIN SECTION
 
-- [x] Display all of the existing feedback at the route `/admin`. The most recently added feedback should appear at the top of the list. Allow the user to delete existing feedback. Prompt the user to confirm prior to deleting the feedback from the database.
+- [ ] Display all of the existing feedback at the route `/admin`. The most recently added feedback should appear at the top of the list. Allow the user to delete existing feedback. Prompt the user to confirm prior to deleting the feedback from the database.
 
 ![display feedback](wireframes/admin.png)
 
-- [ ] Add the ability to flag an existing feedback entry for further review on the /admin view.
+- [x] Add the ability to flag an existing feedback entry for further review on the /admin view.
 
 ### DEPLOY
 - [ ] Deploy your project to Heroku. You'll need to read the special instructions for building and deploying with React. 
