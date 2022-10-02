@@ -7,6 +7,7 @@ import Comment from '../Comment/Comment';
 import Feel from '../Feel/Feel';
 import Review from '../Review/Review';
 import Success from '../Success/Success';
+import Admin from '../Admin/Admin';
 
 function App() {
 
@@ -28,6 +29,9 @@ function App() {
           </Route>
           <Route path='/success'>
             <Success />
+          </Route>
+          <Route path='/admin'>
+            <Admin />
           </Route>
           <Route path='/'>
             <Feel />
