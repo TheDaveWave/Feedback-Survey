@@ -30,6 +30,7 @@ function Understand() {
                 <div className='form'>
                     <h1>How well are you understanding the content?</h1>
                     <div className='flex-container'>
+                        <p>Terrible: 1 to Excellent: 5</p>
                         <label htmlFor='understand-select'>Understanding?</label>
                         {/* Creating a select element so there will always be a value and limited range */}
                         <select value={understanding} id='understand-select' name='understand' onChange={evt => setUnderstanding(evt.target.value)}>

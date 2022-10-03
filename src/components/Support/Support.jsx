@@ -30,6 +30,7 @@ function Support() {
                 <div className='form'>
                     <h1>How well are you being supported?</h1>
                     <div className='flex-container'>
+                        <p>Terrible: 1 to Excellent: 5</p>
                         <label htmlFor='support-select'>Support?</label>
                         {/* Creating a select element so there will always be a value and limited range */}
                         <select value={support} id='support-select' name='support' onChange={evt => setSupported(evt.target.value)}>

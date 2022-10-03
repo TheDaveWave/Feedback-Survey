@@ -32,6 +32,7 @@ function Feel() {
                 <div className='form'>
                     <h1>How are you feeling today?</h1>
                     <div className='flex-container'>
+                        <p>Terrible: 1 to Excellent: 5</p>
                         <label htmlFor='feeling-select'>Feeling?</label>
                         {/* Creating a select element so there will always be a value and limited range */}
                         <select value={feeling} id='feeling-select' name='feeling' onChange={evt => setFeeling(evt.target.value)}>
