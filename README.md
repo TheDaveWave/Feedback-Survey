@@ -15,13 +15,13 @@ This application is meant to emulate a form / feedback loop. The user may fill o
 The guages mentioned are choices between 1 meaning terrible, and 5 meaning excellent.
 
 1. The user may fill out the form starting with the `feeling` page. Here the user may select a number from one to five and then     select the `next` button.
-    [selection](images/selection.png)
+    ![selection](images/selection.png)
 
 2. The next two pages will have the same guage but measure level of `understanding` and level of `support` navigable through the use of the `next` and `back` buttons.
--![back_and_next](images/back-and-next.png)
+    ![back_and_next](images/back-and-next.png)
 
 3. On the fourth page the user may enter in an optional `comment` for the day.
--![comment](images/comments.png)
+    ![comment](images/comments.png)
 
 4. After choosing to enter a comment or not the user will be directed to the `review` page.
     - Here the selections for each part of the form are shown.
