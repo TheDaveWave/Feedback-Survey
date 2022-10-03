@@ -71,5 +71,7 @@ Can't forget these:
 ## Acknowledgement
 Thanks to [Emerging Digital Academy](https://emergingacademy.org/) for supplying me with the resources to complete this project.
 
+Also thanks to Nathaniel Moy for supplying me with an awesome background image.
+
 ## Support
 If you have any questions, suggestions, or issues, please email me at [david.wesley.lindberg@gmail.com](www.google.com)
